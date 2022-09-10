@@ -7,12 +7,14 @@
     <title>Test Main</title>
 </head>
 <body>
-<tr th:each="user : ${users}">
-    <td th:text="${user.id}"></td>
-    <td th:text="${user.email}"></td>
-    <td th:text="${user.password}"></td>
-    <td th:text="${user.firstName}"></td>
-    <td th:text="${user.lastName}"></td>
+<tr th:each="room : ${rooms}">
+    <td th:text="${room.name}"></td>
+    <td th:text="${room.description}"></td>
+    <td th:text="${room.area}"></td>
+    <td th:text="${room.address}"></td>
+    <td th:text="${room.user.firstName}"></td>
+    <td th:text="${room.user.lastName}"></td>
+    <td th:text="${room.user.email}"></td>
     <br>
 </tr>
 </body>
