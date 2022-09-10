@@ -46,6 +46,6 @@ public class FakeRoomRepository implements RoomRepository {
 
     @Override
     public Room findByRoomConfiguration(RoomConfiguration roomConfiguration) {
-        return  rooms.stream().filter(room -> room.getConfiguration().equals(roomConfiguration)).toList().get(0);
+        return rooms.stream().filter(room -> room.getConfiguration().equals(roomConfiguration)).toList().get(0);
     }
 }
