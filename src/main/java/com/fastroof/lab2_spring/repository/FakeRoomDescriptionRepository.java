@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-public class FakeRoomDescriptionRepository {
+public class FakeRoomDescriptionRepository implements RoomDescriptionRepository {
     private final List<RoomDescription> roomDescriptions = new ArrayList<>();
 
     public FakeRoomDescriptionRepository(){
