@@ -1,6 +1,5 @@
 package com.fastroof.lab2_spring.repository;
 
-import com.fastroof.lab2_spring.entity.RoomConfiguration;
 import com.fastroof.lab2_spring.entity.RoomDescription;
 import lombok.Getter;
 import lombok.Setter;

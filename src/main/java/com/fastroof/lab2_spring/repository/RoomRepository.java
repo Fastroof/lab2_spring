@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RoomRepository {
+
     Room findByRoomConfiguration(RoomConfiguration roomConfiguration);
     Room findById(Long id);
 }

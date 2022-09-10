@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RoomController {
-    private FakeRoomRepository fakeRoomRepository;
-    private FakeUserRepository fakeUserRepository;
+    private final FakeRoomRepository fakeRoomRepository;
+    private final FakeUserRepository fakeUserRepository;
 
     @Autowired
     public RoomController(FakeRoomRepository fakeRoomRepository, FakeUserRepository fakeUserRepository) {
@@ -55,5 +55,4 @@ public class RoomController {
         fakeRoomRepository.getRooms().remove(fakeRoomRepository.findById(id));
         return "redirect:../";
     }
-
 }

@@ -5,7 +5,10 @@ import com.fastroof.lab2_spring.entity.RoomConfiguration;
 import com.fastroof.lab2_spring.repository.FakeRoomConfigurationRepository;
 import com.fastroof.lab2_spring.repository.FakeRoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;

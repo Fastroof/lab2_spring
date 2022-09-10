@@ -3,7 +3,6 @@ package com.fastroof.lab2_spring.repository;
 import com.fastroof.lab2_spring.entity.User;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
