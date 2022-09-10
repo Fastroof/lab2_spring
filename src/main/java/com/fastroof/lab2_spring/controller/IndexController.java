@@ -1,5 +1,6 @@
 package com.fastroof.lab2_spring.controller;
 
+import com.fastroof.lab2_spring.repository.FakeOrderRepository;
 import com.fastroof.lab2_spring.repository.FakeRoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,9 +12,18 @@ public class IndexController {
     @Autowired
     private FakeRoomRepository fakeRoomRepository;
 
+    @Autowired
+    private FakeOrderRepository fakeOrderRepository;
+
     @GetMapping("/")
     public String showIndexPage(ModelMap model) {
         model.addAttribute("rooms", fakeRoomRepository.getRooms());
         return "thymeleaf/index";
+    }
+
+    @GetMapping("/orders")
+    public String showOrdersPage(ModelMap model) {
+        model.addAttribute("orders", fakeOrderRepository.getOrders());
+        return "thymeleaf/orders";
     }
 }

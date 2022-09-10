@@ -1,9 +1,6 @@
 package com.fastroof.lab2_spring.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -11,11 +8,11 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Order {
     private User user;
     private Room room;
     private Date dateStartContract;
     private Date dateEndContract;
     private Double price;
-
 }

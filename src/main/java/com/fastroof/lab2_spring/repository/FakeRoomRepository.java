@@ -17,15 +17,29 @@ public class FakeRoomRepository implements RoomRepository {
     private final List<Room> rooms = new ArrayList<>();
 
     private FakeUserRepository fakeUserRepository;
+    private FakeRoomConfigurationRepository fakeRoomConfigurationRepository;
+    private FakeRoomDescriptionRepository fakeRoomDescriptionRepository;
 
     @Autowired
     public void setFakeUserRepository(FakeUserRepository fakeUserRepository){
         this.fakeUserRepository = fakeUserRepository;
     }
 
+    @Autowired
+    public void setFakeRoomConfigurationRepository(FakeRoomConfigurationRepository fakeRoomConfigurationRepository){
+        this.fakeRoomConfigurationRepository = fakeRoomConfigurationRepository;
+    }
+
+    @Autowired
+    public void setFakeRoomDescriptionRepository(FakeRoomDescriptionRepository fakeRoomDescriptionRepository){
+        this.fakeRoomDescriptionRepository = fakeRoomDescriptionRepository;
+    }
+
     public FakeRoomRepository(){
         setFakeUserRepository(new FakeUserRepository());
-        rooms.add(new Room(0L, "Test room", "Test room description", "123 Test st.", 2, 50.0, 199, new Date(), fakeUserRepository.getUsers().get(0)));
-        rooms.add(new Room(1L, "Test room 2", "Test room 2 description", "321 Test st.", 1, 90.0, 299, new Date(), fakeUserRepository.getUsers().get(1)));
+        setFakeRoomConfigurationRepository(new FakeRoomConfigurationRepository());
+        setFakeRoomDescriptionRepository(new FakeRoomDescriptionRepository());
+        rooms.add(new Room(0L, fakeRoomConfigurationRepository.getRoomConfigurations().get(0), fakeRoomDescriptionRepository.getRoomDescriptions().get(0), fakeUserRepository.getUsers().get(0)));
+        rooms.add(new Room(1L,  fakeRoomConfigurationRepository.getRoomConfigurations().get(1), fakeRoomDescriptionRepository.getRoomDescriptions().get(1), fakeUserRepository.getUsers().get(1)));
     }
 }
