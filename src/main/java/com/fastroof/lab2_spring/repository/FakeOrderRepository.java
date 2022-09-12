@@ -15,13 +15,13 @@ import java.util.List;
 @Getter
 @Setter
 public class FakeOrderRepository implements OrderRepository{
-    private FakeRoomRepository fakeRoomRepository;
-    private FakeUserRepository fakeUserRepository;
+    private RoomRepository fakeRoomRepository;
+    private UserRepository fakeUserRepository;
 
     private final List<Order> orders = new ArrayList<>();
 
     @Autowired
-    public FakeOrderRepository(FakeRoomRepository fakeRoomRepository, FakeUserRepository fakeUserRepository){
+    public FakeOrderRepository(RoomRepository fakeRoomRepository, UserRepository fakeUserRepository){
         this.fakeRoomRepository = fakeRoomRepository;
         this.fakeUserRepository = fakeUserRepository;
         orders.add(new Order(fakeUserRepository.getUsers().get(0), fakeRoomRepository.getRooms().get(0), new Date(), new Date(), 444.6) );

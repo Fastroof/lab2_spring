@@ -1,8 +1,8 @@
 package com.fastroof.lab2_spring.controller;
 
 import com.fastroof.lab2_spring.entity.Room;
-import com.fastroof.lab2_spring.repository.FakeRoomRepository;
-import com.fastroof.lab2_spring.repository.FakeUserRepository;
+import com.fastroof.lab2_spring.repository.RoomRepository;
+import com.fastroof.lab2_spring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RoomController {
-    private final FakeRoomRepository fakeRoomRepository;
-    private final FakeUserRepository fakeUserRepository;
+    private final RoomRepository fakeRoomRepository;
+    private final UserRepository fakeUserRepository;
 
     @Autowired
-    public RoomController(FakeRoomRepository fakeRoomRepository, FakeUserRepository fakeUserRepository) {
+    public RoomController(RoomRepository fakeRoomRepository, UserRepository fakeUserRepository) {
         this.fakeRoomRepository = fakeRoomRepository;
         this.fakeUserRepository = fakeUserRepository;
     }

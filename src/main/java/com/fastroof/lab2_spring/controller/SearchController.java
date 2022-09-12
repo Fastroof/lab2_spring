@@ -2,8 +2,8 @@ package com.fastroof.lab2_spring.controller;
 
 import com.fastroof.lab2_spring.entity.Room;
 import com.fastroof.lab2_spring.entity.RoomConfiguration;
-import com.fastroof.lab2_spring.repository.FakeRoomConfigurationRepository;
-import com.fastroof.lab2_spring.repository.FakeRoomRepository;
+import com.fastroof.lab2_spring.repository.RoomConfigurationRepository;
+import com.fastroof.lab2_spring.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,12 +16,14 @@ import java.util.List;
 @RestController
 public class SearchController {
 
-    @Autowired
-    private FakeRoomRepository fakeRoomRepository;
+    private final RoomRepository fakeRoomRepository;
 
-
+    private final RoomConfigurationRepository fakeRoomConfigurationRepository;
     @Autowired
-    private FakeRoomConfigurationRepository fakeRoomConfigurationRepository;
+    public SearchController(RoomRepository fakeRoomRepository, RoomConfigurationRepository fakeRoomConfigurationRepository) {
+        this.fakeRoomRepository = fakeRoomRepository;
+        this.fakeRoomConfigurationRepository = fakeRoomConfigurationRepository;
+    }
 
     @GetMapping("/search")
     @ResponseBody

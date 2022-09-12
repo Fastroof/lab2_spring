@@ -17,25 +17,24 @@ import java.util.List;
 public class FakeRoomRepository implements RoomRepository {
     private final List<Room> rooms = new ArrayList<>();
 
-    private FakeUserRepository fakeUserRepository;
-    private FakeRoomConfigurationRepository fakeRoomConfigurationRepository;
-    private FakeRoomDescriptionRepository fakeRoomDescriptionRepository;
+    private UserRepository fakeUserRepository;
+    private RoomConfigurationRepository fakeRoomConfigurationRepository;
+    private RoomDescriptionRepository fakeRoomDescriptionRepository;
 
     @Autowired
-    public void setFakeUserRepository(FakeUserRepository fakeUserRepository) {
+    public void setFakeUserRepository(UserRepository fakeUserRepository) {
         this.fakeUserRepository = fakeUserRepository;
     }
 
     @Autowired
-    public void setFakeRoomConfigurationRepository(FakeRoomConfigurationRepository fakeRoomConfigurationRepository) {
+    public void setFakeRoomConfigurationRepository(RoomConfigurationRepository fakeRoomConfigurationRepository) {
         this.fakeRoomConfigurationRepository = fakeRoomConfigurationRepository;
     }
 
     @Autowired
-    public void setFakeRoomDescriptionRepository(FakeRoomDescriptionRepository fakeRoomDescriptionRepository) {
+    public void setFakeRoomDescriptionRepository(RoomDescriptionRepository fakeRoomDescriptionRepository) {
         this.fakeRoomDescriptionRepository = fakeRoomDescriptionRepository;
     }
-
 
     public FakeRoomRepository() {
         setFakeUserRepository(new FakeUserRepository());
@@ -44,7 +43,6 @@ public class FakeRoomRepository implements RoomRepository {
         rooms.add(new Room(0L, fakeRoomConfigurationRepository.getRoomConfigurations().get(0), fakeRoomDescriptionRepository.getRoomDescriptions().get(0), fakeUserRepository.getUsers().get(0)));
         rooms.add(new Room(1L, fakeRoomConfigurationRepository.getRoomConfigurations().get(1), fakeRoomDescriptionRepository.getRoomDescriptions().get(1), fakeUserRepository.getUsers().get(1)));
     }
-
 
     @Override
     public Room findByRoomConfiguration(RoomConfiguration roomConfiguration) {

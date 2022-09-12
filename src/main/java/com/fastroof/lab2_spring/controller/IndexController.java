@@ -1,7 +1,7 @@
 package com.fastroof.lab2_spring.controller;
 
-import com.fastroof.lab2_spring.repository.FakeOrderRepository;
-import com.fastroof.lab2_spring.repository.FakeRoomRepository;
+import com.fastroof.lab2_spring.repository.OrderRepository;
+import com.fastroof.lab2_spring.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
     @Autowired
-    private FakeRoomRepository fakeRoomRepository;
+    private RoomRepository fakeRoomRepository;
 
     @Autowired
-    private FakeOrderRepository fakeOrderRepository;
+    private OrderRepository fakeOrderRepository;
 
     @GetMapping("/")
     public String showIndexPage(ModelMap model) {
