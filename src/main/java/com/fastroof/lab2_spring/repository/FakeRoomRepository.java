@@ -5,15 +5,14 @@ import com.fastroof.lab2_spring.entity.RoomConfiguration;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 @Getter
 @Setter
-
 public class FakeRoomRepository implements RoomRepository {
     private final List<Room> rooms = new ArrayList<>();
 

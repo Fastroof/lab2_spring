@@ -3,12 +3,12 @@ package com.fastroof.lab2_spring.repository;
 import com.fastroof.lab2_spring.entity.User;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Repository
 @Getter
 @Setter
 public class FakeUserRepository implements UserRepository {

@@ -3,13 +3,13 @@ package com.fastroof.lab2_spring.repository;
 import com.fastroof.lab2_spring.entity.RoomDescription;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Component
+@Repository
 @Getter
 @Setter
 public class FakeRoomDescriptionRepository implements RoomDescriptionRepository {
