@@ -27,7 +27,5 @@ public class MyConfiguration {
         System.out.println(fakeUserRepository.getUsers().toString());
         return new Order();
     }
-
-
 }
 

@@ -6,6 +6,8 @@ import com.fastroof.lab2_spring.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoomServiceImpl implements RoomService {
 
@@ -20,6 +22,8 @@ public class RoomServiceImpl implements RoomService {
 
     public void submitNewRoom(Room room) {
         room.setUser(fakeUserRepository.getUsers().get(0));
+        List<Room> roomList = fakeRoomRepository.getRooms();
+        room.setId(roomList.get(roomList.size() - 1).getId() + 1);
         fakeRoomRepository.getRooms().add(room);
     }
 

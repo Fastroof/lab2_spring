@@ -10,8 +10,10 @@
 <tr th:each="room : ${rooms}">
     <td th:text="${room.description.name}"></td>
     <td th:text="${room.description.description}"></td>
-    <td th:text="${room.configuration.area}"></td>
     <td th:text="${room.description.address}"></td>
+    <td th:text="${room.configuration.area}"></td>
+    <td th:text="${room.configuration.bedroomCount}"></td>
+    <td th:text="${room.configuration.price}"></td>
 <!--    <td th:text="${room.user.firstName}"></td>-->
 <!--    <td th:text="${room.user.lastName}"></td>-->
 <!--    <td th:text="${room.user.email}"></td>-->
